@@ -17,9 +17,9 @@ const TodoItem = ({ todo }) => {
   return (
     <>
       <li
-        className={`flex items-center justify-between bg-${
-          todo?.status ? 'green' : 'white'
-        }-500 px-4 py-2 border border-gray-300 rounded`}
+        className={`flex items-center justify-between ${
+          todo?.status ? 'bg-green-500' : 'bg-white'
+        } px-4 py-2 border border-gray-300 rounded`}
       >
         <span>{todo?.task}</span>
         <div className="flex flex-row">
