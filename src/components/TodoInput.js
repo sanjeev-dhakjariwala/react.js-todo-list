@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo, fetchTodos } from '../slices/todoSlice';
+
 
 const Input = () => {
   const [value, setValue] = useState('');
+  const dispatch = useDispatch();
 
   const onChange = (event) => {
     setValue(event.target.value);
   };
-  const onAdd = () => {};
+
+  const onAdd = async () => {
+    if (value.trim() !== '') {
+      // Dispatch addTodo to add the new todo
+      await dispatch(addTodo(value));
+
+      // Fetch the updated list of todos
+      dispatch(fetchTodos());
+    }
+    setValue('');
+  };
+  
   return (
     <div className="flex mb-4">
       <input

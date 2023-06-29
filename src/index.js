@@ -19,6 +19,7 @@ store
   .catch((error) => {
     console.error('Error fetching initial todos:', error);
   });
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
