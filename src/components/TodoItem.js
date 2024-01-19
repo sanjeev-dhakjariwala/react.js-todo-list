@@ -21,7 +21,7 @@ const TodoItem = ({ todo }) => {
           todo?.status ? 'bg-green-500' : 'bg-white'
         } px-4 py-2 border border-gray-300 rounded`}
       >
-        <span>{todo?.task}</span>
+        <span>{todo?.task + ' at ' + todo?.completeAt}</span>
         <div className="flex flex-row">
           <button
             className="text-green-500 hover:text-green-600 focus:outline-none mr-4"

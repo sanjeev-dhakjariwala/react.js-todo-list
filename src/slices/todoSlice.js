@@ -18,7 +18,7 @@ export const addTodo = createAsyncThunk('todo/addTodo', async (todo) => {
   try {
     const response = await axios.post(
       'https://649ad5a4bf7c145d02398e92.mockapi.io/api/v1/todo',
-      { task: todo, status: false }
+      { ...todo, status: false }
     );
     return response?.data;
   } catch (error) {
